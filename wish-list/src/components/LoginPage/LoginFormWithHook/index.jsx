@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useFormInput } from "../../../hooks/useFormInput";
+import Input from "../../../shared/WLInput";
 
 const LoginForm = () => {
   const passwordInput = useFormInput();
@@ -13,13 +14,13 @@ const LoginForm = () => {
   return (
     <form>
       E-mail:{" "}
-      <input
+      <Input
         name="email"
-        {...emailInput}
+        input={emailInput}
         // value={emailInput.value}
         // onChange={emailInput.onChange}
       />
-      Hasło: <input name="password" type="password" {...passwordInput} />
+      Hasło: <Input name="password" type="password" input={passwordInput} />
       <button onClick={UserLogin}>Zaloguj</button>
     </form>
   );
